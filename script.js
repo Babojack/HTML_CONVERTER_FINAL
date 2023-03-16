@@ -105,35 +105,26 @@ function generateHTML() {
   downloadButton.classList.add("download");
 
   let startButton = document.createElement("button");
-  startButton.innerText = "Anfang";
+  startButton.innerText = "Start";
   startButton.addEventListener("click", function () {
-    let customText = prompt(
-      "Bitte geben Sie den benutzerdefinierten Text ein, der am Anfang hinzugefügt werden soll:"
+    let customText = `<div style='margin:0px;color:rgb(40, 35, 92);font-family:"Noto Sans", Arial, sans-serif;font-size:10.5pt;'><a data-bsi-placeholder="$doc{d|Briefanrede unpersönlich}" href="" rel="noreferrer noopener" title=" ">Briefanrede(unpers&ouml;nlich)</a>`;    textarea.value = customText + "\n" + textarea.value;
+    // Aktualisiere den Wert des Download-Buttons
+    downloadButton.setAttribute(
+      "href",
+      "data:text/html;charset=utf-8," + encodeURIComponent(textarea.value)
     );
-    if (customText) {
-      textarea.value = customText + "\n" + textarea.value;
-      // Aktualisiere den Wert des Download-Buttons
-      downloadButton.setAttribute(
-        "href",
-        "data:text/html;charset=utf-8," + encodeURIComponent(textarea.value)
-      );
-    }
   });
 
   let endButton = document.createElement("button");
-  endButton.innerText = "Ende";
+  endButton.innerText = "End";
   endButton.addEventListener("click", function () {
-    let customText = prompt(
-      "Bitte geben Sie den benutzerdefinierten Text ein, der am Ende hinzugefügt werden soll:"
+    let customText = '<p style="margin-top:7.5pt;"><a data-bsi-placeholder="$doc{d|Signatur - CS - Kunde}" href="" rel="noreferrer noopener" title=" ">Signatur - CS - Kunde</a></p></div>';
+    textarea.value = textarea.value + "\n" + customText;
+    // Aktualisiere den Wert des Download-Buttons
+    downloadButton.setAttribute(
+      "href",
+      "data:text/html;charset=utf-8," + encodeURIComponent(textarea.value)
     );
-    if (customText) {
-      textarea.value = textarea.value + "\n" + customText;
-      // Aktualisiere den Wert des Download-Buttons
-      downloadButton.setAttribute(
-        "href",
-        "data:text/html;charset=utf-8," + encodeURIComponent(textarea.value)
-      );
-    }
   });
 
   let searchDiv = document.createElement("div");

@@ -17,6 +17,7 @@
         <textarea id="text"></textarea>
       </label>
       <button type="button" onclick="addLine()">Add Line</button>
+      <button type="button" onclick="addColumn()">Add Column</button>
       <label>
         <p>Suchen und Ersetzen:</p>
         <input type="text" id="search" placeholder="Attribut 1" />
@@ -56,6 +57,118 @@
       <button type="button" onclick="generateHTML()">Generieren</button>
       <button type="button" onclick="removeGeneratedHTML()">Entfernen</button>
     </form>
+    <button id="toggleTable" onclick="toggleTable()">Tabelle ein-/ausklappen</button>
+    <table id="table">
+      <thead>
+        <tr id="header">
+          <th>Attribut</th>
+          <th>BSI Code</th>
+          <th>Betreff Code</th>
+          <th>Aktion</th>
+        </tr>
+      </thead>
+      <tbody id="body">
+        <tr>
+          <td>[KUNDENNUMMER]/Kundennummer</td>
+          <td>&lt;a data-bsi-placeholder=&quot;$doc{c|.CaseEntity/ConfigurationFolderEntity;groupGlobalKey=3427b0f6-716f-4539-af19-3f2a815da089/ConfigurationFieldAttribute;infoGlobalKey=2d8772f3-d982-4261-8602-504a89cbb9ce}&quot; href=&quot;&quot; rel=&quot;noreferrer noopener&quot; title=&quot;Kontext:
+            &gt; Geschäftsvorfall
+            &gt;&gt; Bestelldaten&quot;&gt;Kundenbestellnummer&lt;/a&gt;<button onclick="copyToClipboard(this)">Kopieren</button></td>
+          <td>$doc{c|.CaseEntity/ConfigurationFolderEntity;groupGlobalKey=5789c271-2520-4e81-a213-bc09277af767/ConfigurationFieldAttribute;infoGlobalKey=57d489da-a379-4ee6-865c-2ed984965570}<button onclick="copyToClipboard(this)">Kopieren</button></td>
+        </tr>
+        <tr>
+          <td>[BESTELLNUMMER]</td>
+          <td>&lt;a data-bsi-"placeholder=$doc{c|.CaseEntity/ConfigurationFolderEntity;groupGlobalKey=5789c271-2520-4e81-a213-bc09277af767/ConfigurationFieldAttribute;infoGlobalKey=9c13da65-fb92-48c1-97d4-c04326b8d38a}" href="" rel="noreferrer noopener" title="Kontext:
+            &gt; Geschäftsvorfall
+            &gt;&gt; Bestelldaten"&gt;Bestellnummer&lt;/a&gt;<button onclick="copyToClipboard(this)">Kopieren</button></td>
+          <td>$doc{c|.CaseEntity/ConfigurationFolderEntity;groupGlobalKey=5789c271-2520-4e81-a213-bc09277af767/ConfigurationFieldAttribute;infoGlobalKey=9c13da65-fb92-48c1-97d4-c04326b8d38a}<button onclick="copyToClipboard(this)">Kopieren</button></td>
+        </tr>
+        <tr>
+          <td>BestellnummerExternebestellnummer</td>
+          <td>&lt;a data-bsi-placeholder="$doc{c|.CaseEntity/CaseLastLinkedBusinessEntity/BusinessBusinessNoAttribute}" href="https://test.mercateo.bsi.cloud/bsicrm/?dl=outline-22792&amp;i=administration" rel="noreferrer noopener" style="box-sizing:border-box;color:rgb(0, 0, 0);text-decoration:none;cursor:pointer;user-select:auto;border-bottom:1px solid rgb(0, 138, 225);" target="_blank" title="Kontext:  &gt; Geschäftsvorfall &gt;&gt; Letzte verknüpfte Kundenbestellung"&gt;Bestellnummer&lt;/a&gt;&lt;a data-bsi-placeholder="$doc{c|.CaseEntity/CaseLastLinkedBusinessEntity/BusinessCustomerOrderIdAttribute|prependIfNotEmpty= (|appendIfNotEmpty=)}" href="https://test.mercateo.bsi.cloud/bsicrm/?dl=outline-22792&amp;i=administration" rel="noreferrer noopener" style="box-sizing:border-box;color:rgb(0,0, 0);text-decoration:none;cursor:pointer;user-select:auto;border-bottom:1px solid rgb(0, 138, 225);" target="_blank" title="Kontext: &gt;  Geschäftsvorfall &gt; &gt;  Letzte verknüpfte Kundenbestellung Parameter: &gt; prependIfNotEmpty= (  appendIfNotEmpty=)" &gt; Externe Bestellnummer &lt;/a&gt;
+
+
+            <button onclick="copyToClipboard(this)">Kopieren</button></td>
+          <td>4<button onclick="copyToClipboard(this)">Kopieren</button></td>
+        </tr>
+        <tr>
+          <td>[KUNDENNUMMER]/Kundennummer</td>
+          <td>3 <button onclick="copyToClipboard(this)">Kopieren</button></td>
+          <td>4<button onclick="copyToClipboard(this)">Kopieren</button></td>
+        </tr>
+        <tr>
+          <td>[KUNDENNUMMER]/Kundennummer</td>
+          <td>3 <button onclick="copyToClipboard(this)">Kopieren</button></td>
+          <td>4<button onclick="copyToClipboard(this)">Kopieren</button></td>
+        </tr>
+        <tr>
+          <td>[KUNDENNUMMER]/Kundennummer</td>
+          <td>3 <button onclick="copyToClipboard(this)">Kopieren</button></td>
+          <td>4<button onclick="copyToClipboard(this)">Kopieren</button></td>
+        </tr>
+        <tr>
+          <td>[KUNDENNUMMER]/Kundennummer</td>
+          <td>3 <button onclick="copyToClipboard(this)">Kopieren</button></td>
+          <td>4<button onclick="copyToClipboard(this)">Kopieren</button></td>
+        </tr>
+        <tr>
+          <td>[KUNDENNUMMER]/Kundennummer</td>
+          <td>3 <button onclick="copyToClipboard(this)">Kopieren</button></td>
+          <td>4<button onclick="copyToClipboard(this)">Kopieren</button></td>
+        </tr>
+        <tr>
+          <td>[KUNDENNUMMER]/Kundennummer</td>
+          <td>3 <button onclick="copyToClipboard(this)">Kopieren</button></td>
+          <td>4<button onclick="copyToClipboard(this)">Kopieren</button></td>
+        </tr>
+        <tr>
+          <td>[KUNDENNUMMER]/Kundennummer</td>
+          <td>3 <button onclick="copyToClipboard(this)">Kopieren</button></td>
+          <td>4<button onclick="copyToClipboard(this)">Kopieren</button></td>
+        </tr>
+        <tr>
+          <td>[KUNDENNUMMER]/Kundennummer</td>
+          <td>3 <button onclick="copyToClipboard(this)">Kopieren</button></td>
+          <td>4<button onclick="copyToClipboard(this)">Kopieren</button></td>
+        </tr>
+        <tr>
+          <td>[KUNDENNUMMER]/Kundennummer</td>
+          <td>3 <button onclick="copyToClipboard(this)">Kopieren</button></td>
+          <td>4<button onclick="copyToClipboard(this)">Kopieren</button></td>
+        </tr>
+        <tr>
+          <td>[KUNDENNUMMER]/Kundennummer</td>
+          <td>3 <button onclick="copyToClipboard(this)">Kopieren</button></td>
+          <td>4<button onclick="copyToClipboard(this)">Kopieren</button></td>
+        </tr>
+        <tr>
+          <td>[KUNDENNUMMER]/Kundennummer</td>
+          <td>3 <button onclick="copyToClipboard(this)">Kopieren</button></td>
+          <td>4<button onclick="copyToClipboard(this)">Kopieren</button></td>
+        </tr>
+        <tr>
+          <td>[KUNDENNUMMER]/Kundennummer</td>
+          <td>3 <button onclick="copyToClipboard(this)">Kopieren</button></td>
+          <td>4<button onclick="copyToClipboard(this)">Kopieren</button></td>
+        </tr>
+        <tr>
+          <td>[KUNDENNUMMER]/Kundennummer</td>
+          <td>3 <button onclick="copyToClipboard(this)">Kopieren</button></td>
+          <td>4<button onclick="copyToClipboard(this)">Kopieren</button></td>
+        </tr>
+        <tr>
+          <td>[KUNDENNUMMER]/Kundennummer</td>
+          <td>3 <button onclick="copyToClipboard(this)">Kopieren</button></td>
+          <td>4<button onclick="copyToClipboard(this)">Kopieren</button></td>
+        </tr>
+        <tr>
+          <td>[KUNDENNUMMER]/Kundennummer</td>
+          <td>3 <button onclick="copyToClipboard(this)">Kopieren</button></td>
+          <td>4<button onclick="copyToClipboard(this)">Kopieren</button></td>
+        </tr>
+        <!-- Fügen Sie weitere Zeilen mit demselben Format hier ein -->
+      </tbody>
+
+    </table>
   </body>
 </html>
 <script src="script.js"></script>
